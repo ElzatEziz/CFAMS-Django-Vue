@@ -132,6 +132,10 @@ export default {
       });
       this.fileList = fileArray;
       this.fileUrlList = fileUrlArray;
+    },
+    // 获取图片地址
+    getImgUrl() {
+      return this.fileUrlList.join(",");
     }
   }
 };

@@ -6,11 +6,6 @@
 
         <el-row class="ad" :style="{justifyContent:contents.btnAdAllBoxPosition=='1'?'flex-start':contents.btnAdAllBoxPosition=='2'?'center':'flex-end'}">
           <el-form-item>
-
-
-
-
-
           </el-form-item>
         </el-row>
       </el-form>
@@ -28,7 +23,6 @@
             <el-table-column  v-if="contents.tableSelection"
                 type="selection"
                 :header-align="contents.tableAlign"
-                align="center"
                 width="50">
             </el-table-column>
             <el-table-column label="索引" :align="contents.tableAlign"  v-if="contents.tableIndex" type="index" width="50" />
@@ -36,22 +30,20 @@
                     prop="name"
                    :header-align="contents.tableAlign"
 		    label="名称">
-		     <template slot-scope="scope">
-                       {{scope.row.name}}
-                     </template>
-                </el-table-column>
-                  <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"  prop="value"
-                   :header-align="contents.tableAlign"
-                    width="200"
-                    label="值">
-                    <template slot-scope="scope">
-                      <div v-if="scope.row.value">
-                        <img :src="$base.url+scope.row.value.split(',')[0]" width="100" height="100">
-                      </div>
-                      <div v-else>无图片</div>
-                    </template>
-                  </el-table-column>
-            <el-table-column width="300" :align="contents.tableAlign" 
+		     <template slot-scope="scope"> {{scope.row.name}} </template>
+          </el-table-column>
+            <el-table-column :sortable="contents.tableSortable" :align="contents.tableAlign"  prop="value"
+              :header-align="contents.tableAlign"
+              width="200"
+              label="值">
+              <template slot-scope="scope">
+                <div v-if="scope.row.value">
+                  <img :src="$base.url+scope.row.value.split(',')[0]" width="100" height="100">
+                </div>
+                <div v-else>无图片</div>
+              </template>
+            </el-table-column>
+      <el-table-column width="300" :align="contents.tableAlign" 
                :header-align="contents.tableAlign"
                 label="操作">
                 <template slot-scope="scope">
@@ -114,7 +106,7 @@ export default {
       shForm: {},
       chartVisiable: false,
       addOrUpdateFlag:false,
-      contents:{"searchBtnFontColor":"rgba(255, 255, 255, 1)","pagePosition":"1","inputFontSize":"14px","inputBorderRadius":"4px","tableBtnDelFontColor":"rgba(23, 109, 71, 1)","tableBtnIconPosition":"1","searchBtnHeight":"40px","tableBgColor":"rgba(255, 255, 255, 1)","inputIconColor":"rgba(45, 132, 94, 1)","searchBtnBorderRadius":"4px","tableStripe":false,"btnAdAllWarnFontColor":"rgba(34, 116, 80, 1)","tableBtnDelBgColor":"#fff","searchBtnIcon":"0","tableSize":"medium","searchBtnBorderStyle":"dashed ","text":{"padding":"0 20px","boxShadow":"0 0 0px rgba(0,0,0,.1)","margin":"0 auto","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(247, 247, 247, 0)","color":"rgba(45, 132, 94, 1)","borderRadius":"6px","borderWidth":"0","width":"aoto","lineHeight":"750px","fontSize":"45px","borderStyle":"solid"},"tableSelection":true,"searchBtnBorderWidth":"3px","tableContentFontSize":"14px","searchBtnBgColor":"rgba(45, 132, 94, 1)","inputTitleSize":"14px","btnAdAllBorderColor":"#DCDFE6","pageJumper":true,"btnAdAllIconPosition":"1","searchBoxPosition":"2","tableBtnDetailFontColor":"rgba(23, 109, 71, 1)","tableBtnHeight":"40px","pagePager":true,"searchBtnBorderColor":"rgba(255, 255, 255, 1)","tableHeaderFontColor":"rgba(255, 255, 255, 1)","inputTitle":"0","tableBtnBorderRadius":"0px","btnAdAllFont":"1","btnAdAllDelFontColor":"rgba(34, 116, 80, 1)","tableBtnIcon":"1","btnAdAllHeight":"40px","btnAdAllWarnBgColor":"rgba(255, 255, 255, 0)","btnAdAllBorderWidth":"0px","tableStripeFontColor":"#606266","tableBtnBorderStyle":"double","inputHeight":"40px","btnAdAllBorderRadius":"4px","btnAdAllDelBgColor":"rgba(255, 255, 255, 0)","pagePrevNext":true,"btnAdAllAddBgColor":"rgba(255, 255, 255, 0)","searchBtnFont":"1","tableIndex":true,"btnAdAllIcon":"1","tableSortable":false,"pageSizes":true,"tableFit":true,"pageBtnBG":false,"searchBtnFontSize":"14px","tableBtnEditBgColor":"#fff","box":{"padding":"10px 20px","boxShadow":"0 0 6px rgba(0,0,0,0)","flag":"1","backgroundImage":"http://codegen.caihongy.cn/20211127/eab52ed12cc046f993b4948a1731044f.png","background":"#fff"},"inputBorderWidth":"5px","inputFontPosition":"1","inputFontColor":"rgba(45, 132, 94, 1)","pageEachNum":10,"tableHeaderBgColor":"rgba(45, 132, 94, 1)","inputTitleColor":"#333","btnAdAllBoxPosition":"1","tableBtnDetailBgColor":"#fff","inputIcon":"1","searchBtnIconPosition":"2","btnAdAllFontSize":"14px","inputBorderStyle":"double","tableHoverFontColor":"#333","inputBgColor":"#fff","pageStyle":true,"pageTotal":true,"btnAdAllAddFontColor":"rgba(34, 116, 80, 1)","tableBtnFont":"1","tableContentFontColor":"rgba(58, 58, 58, 1)","inputBorderColor":"rgba(45, 132, 94, 1)","tableShowHeader":true,"tableHoverBgColor":"rgba(234, 234, 234, 0.51)","tableBtnFontSize":"14px","tableBtnBorderColor":"rgba(45, 132, 94, 1)","inputIconPosition":"2","tableBorder":true,"btnAdAllBorderStyle":"solid","tableBtnBorderWidth":"4px","tableStripeBgColor":"#F5F7FA","tableBtnEditFontColor":"rgba(23, 109, 71, 1)","tableAlign":"center"},
+      contents:{"searchBtnFontColor":"rgba(94, 94, 94, 1)","pagePosition":"1","inputFontSize":"14px","inputBorderRadius":"20px","tableBtnDelFontColor":"rgba(23, 109, 71, 0)","tableBtnIconPosition":"1","searchBtnHeight":"40px","tableBgColor":"rgba(241,148,138,0.5)","inputIconColor":"rgba(45, 120, 94, 1)","searchBtnBorderRadius":"20px","tableStripe":false,"btnAdAllWarnFontColor":"rgba(3, 199, 213, 1)","tableBtnDelBgColor":"#fff","searchBtnIcon":"0","tableSize":"medium","searchBtnBorderStyle":"solid ","text":{"padding":"0 20px","boxShadow":"0 0 0px rgba(0,0,0,.1)","margin":"0 auto","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(247, 247, 247, 0)","color":"rgba(90, 145, 208, 1)","borderRadius":"20px","borderWidth":"0","width":"aoto","lineHeight":"750px","fontSize":"45px","borderStyle":"solid"},"tableSelection":true,"searchBtnBorderWidth":"3px","tableContentFontSize":"14px","searchBtnBgColor":"rgba(101, 253, 249, 1)","inputTitleSize":"14px","btnAdAllBorderColor":"#DCDFE6","pageJumper":true,"btnAdAllIconPosition":"1","searchBoxPosition":"2","tableBtnDetailFontColor":"rgba(23, 109, 71, 1)","tableBtnHeight":"40px","pagePager":true,"searchBtnBorderColor":"rgba(255, 255, 255, 1)","tableHeaderFontColor":"rgba(255, 255, 255, 1)","inputTitle":"0","tableBtnBorderRadius":"0px","btnAdAllFont":"1","btnAdAllDelFontColor":"rgba(34, 116, 80, 1)","tableBtnIcon":"1","btnAdAllHeight":"40px","btnAdAllWarnBgColor":"rgba(255, 255, 255, 0)","btnAdAllBorderWidth":"0px","tableStripeFontColor":"#606266","tableBtnBorderStyle":"double","inputHeight":"40px","btnAdAllBorderRadius":"4px","btnAdAllDelBgColor":"rgba(255, 255, 255, 0)","pagePrevNext":true,"btnAdAllAddBgColor":"rgba(255, 255, 255, 0)","searchBtnFont":"1","tableIndex":true,"btnAdAllIcon":"1","tableSortable":false,"pageSizes":true,"tableFit":true,"pageBtnBG":false,"searchBtnFontSize":"14px","tableBtnEditBgColor":"#fff","box":{"padding":"10px 20px","boxShadow":"0 0 6px rgba(0,0,0,0)","flag":"1","backgroundImage":"http://codegen.caihongy.cn/20211127/eab52ed12cc046f993b4948a1731044f.png","background":"#fff"},"inputBorderWidth":"1px","inputFontPosition":"1","inputFontColor":"rgba(0, 186, 189, 1)","pageEachNum":10,"tableHeaderBgColor":"rgba(0, 206, 209, 1)","inputTitleColor":"#333","btnAdAllBoxPosition":"1","tableBtnDetailBgColor":"#fff","inputIcon":"1","searchBtnIconPosition":"2","btnAdAllFontSize":"14px","inputBorderStyle":"solid","tableHoverFontColor":"#333","inputBgColor":"#fff","pageStyle":true,"pageTotal":true,"btnAdAllAddFontColor":"rgba(34, 116, 80, 1)","tableBtnFont":"1","tableContentFontColor":"rgba(58, 58, 58, 1)","inputBorderColor":"rgba(0, 206, 209, 1)","tableShowHeader":true,"tableHoverBgColor":"rgba(234, 234, 234, 0.51)","tableBtnFontSize":"14px","tableBtnBorderColor":"rgba(0, 206, 209, 1)","inputIconPosition":"2","tableBorder":true,"btnAdAllBorderStyle":"solid","tableBtnBorderWidth":"4px","tableStripeBgColor":"#F5F7FA","tableBtnEditFontColor":"rgba(23, 109, 71, 1)","tableAlign":"center"},
       layouts: '',
 
 
@@ -123,7 +115,7 @@ export default {
   created() {
     this.init();
     this.getDataList();
-    this.contentStyleChange()
+
   },
   mounted() {
 
@@ -138,165 +130,12 @@ export default {
   },
   methods: {
 
-    contentStyleChange() {
-      this.contentSearchStyleChange()
-      this.contentBtnAdAllStyleChange()
-      this.contentSearchBtnStyleChange()
-      this.contentTableBtnStyleChange()
-      this.contentPageStyleChange()
-    },
-    contentSearchStyleChange() {
-      this.$nextTick(()=>{
-        document.querySelectorAll('.form-content .slt .el-input__inner').forEach(el=>{
-          let textAlign = 'left'
-          if(this.contents.inputFontPosition == 2) textAlign = 'center'
-          if(this.contents.inputFontPosition == 3) textAlign = 'right'
-          el.style.textAlign = textAlign
-          el.style.height = this.contents.inputHeight
-          el.style.lineHeight = this.contents.inputHeight
-          el.style.color = this.contents.inputFontColor
-          el.style.fontSize = this.contents.inputFontSize
-          el.style.borderWidth = this.contents.inputBorderWidth
-          el.style.borderStyle = this.contents.inputBorderStyle
-          el.style.borderColor = this.contents.inputBorderColor
-          el.style.borderRadius = this.contents.inputBorderRadius
-          el.style.backgroundColor = this.contents.inputBgColor
-        })
-        if(this.contents.inputTitle) {
-          document.querySelectorAll('.form-content .slt .el-form-item__label').forEach(el=>{
-            el.style.color = this.contents.inputTitleColor
-            el.style.fontSize = this.contents.inputTitleSize
-            el.style.lineHeight = this.contents.inputHeight
-          })
-        }
-        setTimeout(()=>{
-          document.querySelectorAll('.form-content .slt .el-input__prefix').forEach(el=>{
-            el.style.color = this.contents.inputIconColor
-            el.style.lineHeight = this.contents.inputHeight
-          })
-          document.querySelectorAll('.form-content .slt .el-input__suffix').forEach(el=>{
-            el.style.color = this.contents.inputIconColor
-            el.style.lineHeight = this.contents.inputHeight
-          })
-          document.querySelectorAll('.form-content .slt .el-input__icon').forEach(el=>{
-            el.style.lineHeight = this.contents.inputHeight
-          })
-        },10)
-
-      })
-    },
-    // 搜索按钮
-    contentSearchBtnStyleChange() {
-      this.$nextTick(()=>{
-        document.querySelectorAll('.form-content .slt .el-button--success').forEach(el=>{
-          el.style.height = this.contents.searchBtnHeight
-          el.style.color = this.contents.searchBtnFontColor
-          el.style.fontSize = this.contents.searchBtnFontSize
-          el.style.borderWidth = this.contents.searchBtnBorderWidth
-          el.style.borderStyle = this.contents.searchBtnBorderStyle
-          el.style.borderColor = this.contents.searchBtnBorderColor
-          el.style.borderRadius = this.contents.searchBtnBorderRadius
-          el.style.backgroundColor = this.contents.searchBtnBgColor
-        })
-      })
-    },
-    // 新增、批量删除
-    contentBtnAdAllStyleChange() {
-      this.$nextTick(()=>{
-        document.querySelectorAll('.form-content .ad .el-button--success').forEach(el=>{
-          el.style.height = this.contents.btnAdAllHeight
-          el.style.color = this.contents.btnAdAllAddFontColor
-          el.style.fontSize = this.contents.btnAdAllFontSize
-          el.style.borderWidth = this.contents.btnAdAllBorderWidth
-          el.style.borderStyle = this.contents.btnAdAllBorderStyle
-          el.style.borderColor = this.contents.btnAdAllBorderColor
-          el.style.borderRadius = this.contents.btnAdAllBorderRadius
-          el.style.backgroundColor = this.contents.btnAdAllAddBgColor
-        })
-        document.querySelectorAll('.form-content .ad .el-button--danger').forEach(el=>{
-          el.style.height = this.contents.btnAdAllHeight
-          el.style.color = this.contents.btnAdAllDelFontColor
-          el.style.fontSize = this.contents.btnAdAllFontSize
-          el.style.borderWidth = this.contents.btnAdAllBorderWidth
-          el.style.borderStyle = this.contents.btnAdAllBorderStyle
-          el.style.borderColor = this.contents.btnAdAllBorderColor
-          el.style.borderRadius = this.contents.btnAdAllBorderRadius
-          el.style.backgroundColor = this.contents.btnAdAllDelBgColor
-        })
-        document.querySelectorAll('.form-content .ad .el-button--warning').forEach(el=>{
-          el.style.height = this.contents.btnAdAllHeight
-          el.style.color = this.contents.btnAdAllWarnFontColor
-          el.style.fontSize = this.contents.btnAdAllFontSize
-          el.style.borderWidth = this.contents.btnAdAllBorderWidth
-          el.style.borderStyle = this.contents.btnAdAllBorderStyle
-          el.style.borderColor = this.contents.btnAdAllBorderColor
-          el.style.borderRadius = this.contents.btnAdAllBorderRadius
-          el.style.backgroundColor = this.contents.btnAdAllWarnBgColor
-        })
-      })
-    },
-    // 表格
-    // rowStyle({ row, rowIndex}) {
-    //   if (rowIndex % 2 == 1) {
-    //     if(this.contents.tableStripe) {
-    //       return {color:this.contents.tableStripeFontColor}
-    //     }
-    //   } else {
-    //     return ''
-    //   }
-    // },
-    // cellStyle({ row, rowIndex}){
-    //   if (rowIndex % 2 == 1) {
-    //     if(this.contents.tableStripe) {
-    //       return {backgroundColor:this.contents.tableStripeBgColor}
-    //     }
-    //   } else {
-    //     return ''
-    //   }
-    // },
+   
     headerRowStyle({ row, rowIndex}){
       return {color: this.contents.tableHeaderFontColor}
     },
     headerCellStyle({ row, rowIndex}){
       return {backgroundColor: this.contents.tableHeaderBgColor}
-    },
-    // 表格按钮
-    contentTableBtnStyleChange(){
-      // this.$nextTick(()=>{
-      //   setTimeout(()=>{
-      //     document.querySelectorAll('.table-content .tables .el-table__body .el-button--success').forEach(el=>{
-      //       el.style.height = this.contents.tableBtnHeight
-      //       el.style.color = this.contents.tableBtnDetailFontColor
-      //       el.style.fontSize = this.contents.tableBtnFontSize
-      //       el.style.borderWidth = this.contents.tableBtnBorderWidth
-      //       el.style.borderStyle = this.contents.tableBtnBorderStyle
-      //       el.style.borderColor = this.contents.tableBtnBorderColor
-      //       el.style.borderRadius = this.contents.tableBtnBorderRadius
-      //       el.style.backgroundColor = this.contents.tableBtnDetailBgColor
-      //     })
-      //     document.querySelectorAll('.table-content .tables .el-table__body .el-button--primary').forEach(el=>{
-      //       el.style.height = this.contents.tableBtnHeight
-      //       el.style.color = this.contents.tableBtnEditFontColor
-      //       el.style.fontSize = this.contents.tableBtnFontSize
-      //       el.style.borderWidth = this.contents.tableBtnBorderWidth
-      //       el.style.borderStyle = this.contents.tableBtnBorderStyle
-      //       el.style.borderColor = this.contents.tableBtnBorderColor
-      //       el.style.borderRadius = this.contents.tableBtnBorderRadius
-      //       el.style.backgroundColor = this.contents.tableBtnEditBgColor
-      //     })
-      //     document.querySelectorAll('.table-content .tables .el-table__body .el-button--danger').forEach(el=>{
-      //       el.style.height = this.contents.tableBtnHeight
-      //       el.style.color = this.contents.tableBtnDelFontColor
-      //       el.style.fontSize = this.contents.tableBtnFontSize
-      //       el.style.borderWidth = this.contents.tableBtnBorderWidth
-      //       el.style.borderStyle = this.contents.tableBtnBorderStyle
-      //       el.style.borderColor = this.contents.tableBtnBorderColor
-      //       el.style.borderRadius = this.contents.tableBtnBorderRadius
-      //       el.style.backgroundColor = this.contents.tableBtnDelBgColor
-      //     })
-
-      //   }, 50)
-      // })
     },
     // 分页
     contentPageStyleChange(){
@@ -426,80 +265,21 @@ export default {
     display: flex;
   }
 
-  .pages {
-    & /deep/ el-pagination__sizes{
-      & /deep/ el-input__inner {
-        height: 22px;
-        line-height: 22px;
-      }
-    }
-  }
+  
   
 
   .el-button+.el-button {
     margin:0;
   } 
 
-  .tables {
-	& /deep/ .el-button--success {
-		height: 40px;
-		color: rgba(23, 109, 71, 1);
-		font-size: 14px;
-		border-width: 4px;
-		border-style: double;
-		border-color: rgba(45, 132, 94, 1);
-		border-radius: 0px;
-		background-color: #fff;
-	}
-	
-	& /deep/ .el-button--primary {
-		height: 40px;
-		color: rgba(23, 109, 71, 1);
-		font-size: 14px;
-		border-width: 4px;
-		border-style: double;
-		border-color: rgba(45, 132, 94, 1);
-		border-radius: 0px;
-		background-color: #fff;
-	}
-	
-	& /deep/ .el-button--danger {
-		height: 40px;
-		color: rgba(23, 109, 71, 1);
-		font-size: 14px;
-		border-width: 4px;
-		border-style: double;
-		border-color: rgba(45, 132, 94, 1);
-		border-radius: 0px;
-		background-color: #fff;
-	}
-
-    & /deep/ .el-button {
-      margin: 4px;
-    }
-  }
+  
 	.form-content {
 		background: transparent;
 	}
+
 	.table-content {
 		background: transparent;
 	}
 	
-	.tables /deep/ .el-table__body tr {
-				background-color: rgba(255, 255, 255, 1) !important;
-				color: rgba(58, 58, 58, 1) !important;
-	 }
-	.tables /deep/ .el-table__body tr.el-table__row--striped td {
-	    background: transparent;
-	}
-	.tables /deep/ .el-table__body tr.el-table__row--striped {
-		background-color: #F5F7FA !important;
-		color: #606266 !important;
-	}
 	
-	 .tables /deep/ .el-table__body tr:hover>td {
-	   	   background-color: rgba(234, 234, 234, 0.51) !important;
-	   	   	   color: #333 !important;
-	   	 }
-	 
 </style>

@@ -23,6 +23,7 @@ class Auth(object):
         encode_str = base64.b64encode(str(encode_dict).encode("utf-8"))
         msg['data']["id"] = req_dict.get("id")
         msg["id"] = req_dict.get("id")
+        msg["avatar"] =req_dict.get("avatar")
         msg['token'] = encode_str.decode('utf-8')
         return JsonResponse(msg)
 

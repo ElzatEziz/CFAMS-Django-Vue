@@ -32,23 +32,11 @@ import api from '@/utils/api'
 // 数据校验工具类
 import * as validate from '@/utils/validate.js'
 // 后台地图
-import VueAMap from 'vue-amap'
 import '@/icons'
-//excel导出
-import JsonExcel from 'vue-json-excel'
-//打印
-import printJS from 'print-js'
 //MD5
 import md5 from 'js-md5';
 
-// 后台地图
-Vue.use(VueAMap)
-VueAMap.initAMapApiLoader({
-  key: 'ca04cee7ac952691aa67a131e6f0cee0',
-  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor', 'AMap.Geocoder'],
-  // 默认高德 sdk 版本为 1.4.4
-  v: '1.4.4'
-})
+
 Vue.prototype.$validate = validate
 Vue.prototype.$http = http // ajax请求方法
 Vue.prototype.$echarts = echarts
@@ -68,8 +56,6 @@ Vue.component('bread-crumbs', BreadCrumbs)
 Vue.component('file-upload', FileUpload)
 Vue.component('excel-file-upload', ExcelFileUpload)
 Vue.component('editor', Editor)
-//excel导出
-Vue.component('downloadExcel', JsonExcel)
 //MD5
 Vue.prototype.$md5 = md5;
 new Vue({

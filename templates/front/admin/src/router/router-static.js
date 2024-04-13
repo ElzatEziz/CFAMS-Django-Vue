@@ -8,27 +8,33 @@ import Home from '@/views/home'
 import Login from '@/views/login'
 import NotFound from '@/views/404'
 import UpdatePassword from '@/views/update-password'
-import pay from '@/views/pay'
-import register from '@/views/register'
+import homePage from '@/views/homePage.vue';
+// import pay from '@/views/pay'
+// import register from '@/views/register'
 import center from '@/views/center'
-    import zichandiaobo from '@/views/modules/zichandiaobo/list'
-    import caiwuyuan from '@/views/modules/caiwuyuan/list'
-    import zichanshengou from '@/views/modules/zichanshengou/list'
-    import zichanxinxi from '@/views/modules/zichanxinxi/list'
-    import zichanleixing from '@/views/modules/zichanleixing/list'
-    import xiaojiguanliyuan from '@/views/modules/xiaojiguanliyuan/list'
-    import zichanpandian from '@/views/modules/zichanpandian/list'
-    import zichanweixiu from '@/views/modules/zichanweixiu/list'
-    import zichanbaofei from '@/views/modules/zichanbaofei/list'
-    import bumen from '@/views/modules/bumen/list'
-    import shengouruku from '@/views/modules/shengouruku/list'
-    import zichanchuku from '@/views/modules/zichanchuku/list'
-    import bumenguanliyuan from '@/views/modules/bumenguanliyuan/list'
-    import weixiufushen from '@/views/modules/weixiufushen/list'
+import zichandiaobo from '@/views/modules/zichandiaobo/list'
+import caiwuyuan from '@/views/modules/caiwuyuan/list'
+import zichanshengou from '@/views/modules/zichanshengou/list'
+import zichanxinxi from '@/views/modules/zichanxinxi/list'
+import zichanleixing from '@/views/modules/zichanleixing/list'
+import xiaojiguanliyuan from '@/views/modules/xiaojiguanliyuan/list'
+import zichanpandian from '@/views/modules/zichanpandian/list'
+import zichanweixiu from '@/views/modules/zichanweixiu/list'
+import zichanbaofei from '@/views/modules/zichanbaofei/list'
+import bumen from '@/views/modules/bumen/list'
+import shengouruku from '@/views/modules/shengouruku/list'
+import zichanchuku from '@/views/modules/zichanchuku/list'
+import bumenguanliyuan from '@/views/modules/bumenguanliyuan/list'
+import weixiufushen from '@/views/modules/weixiufushen/list'
 
 
 //2.配置路由   注意：名字
-const routes = [{
+const routes = [
+  {
+    path: '/',
+    name: '首页',
+    component: homePage,
+},{
     path: '/index',
     name: '首页',
     component: Index,
@@ -43,12 +49,14 @@ const routes = [{
       name: '修改密码',
       component: UpdatePassword,
       meta: {icon:'', title:'updatePassword'}
-    }, {
-      path: '/pay',
-      name: '支付',
-      component: pay,
-      meta: {icon:'', title:'pay'}
-    }, {
+    },
+    // , {
+    //   path: '/pay',
+    //   name: '支付',
+    //   component: pay,
+    //   meta: {icon:'', title:'pay'}
+    // },
+     {
       path: '/center',
       name: '个人信息',
       component: center,
@@ -132,12 +140,12 @@ const routes = [{
     component: Login,
     meta: {icon:'', title:'login'}
   },
-  {
-    path: '/register',
-    name: 'register',
-    component: register,
-    meta: {icon:'', title:'register'}
-  },
+  // {
+  //   path: '/register',
+  //   name: 'register',
+  //   component: register,
+  //   meta: {icon:'', title:'register'}
+  // },
   {
     path: '/',
     name: '首页',

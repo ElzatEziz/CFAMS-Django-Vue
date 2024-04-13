@@ -1,8 +1,8 @@
 const base = {
     get() {
         return {
-            url : "http://localhost:8080/djangok0o7w/",
-            name: "djangok0o7w",
+            url : "http://localhost:8080/CFAMSDB/",
+            name: "CFAMSDB",
             // 退出到首页链接
             indexUrl: ''
         };

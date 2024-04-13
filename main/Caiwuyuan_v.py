@@ -19,8 +19,6 @@ def caiwuyuan_register(request):
     if request.method in ["POST", "GET"]:
         msg = {'code': normal_code, "msg": mes.normal_code}
         req_dict = request.session.get("req_dict")
-
-
         error = caiwuyuan.createbyreq(caiwuyuan, caiwuyuan, req_dict)
         if error != None:
             msg['code'] = crud_error_code
@@ -49,6 +47,7 @@ def caiwuyuan_login(request):
                 return JsonResponse(msg)
                 
         req_dict['id'] = datas[0].get('id')
+        req_dict['avatar'] = datas[0].get('touxiang')
         return Auth.authenticate(Auth, caiwuyuan, req_dict)
 
 

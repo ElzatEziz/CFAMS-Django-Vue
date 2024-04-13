@@ -5,7 +5,7 @@ import storage from '@/utils/storage'
 const http = axios.create({
     timeout: 1000 * 86400,
     withCredentials: true,
-    baseURL: '/djangok0o7w',
+    baseURL: '/CFAMSDB',
     headers: {
         'Content-Type': 'application/json; charset=utf-8'
     }

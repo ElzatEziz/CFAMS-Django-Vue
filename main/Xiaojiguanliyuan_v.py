@@ -49,6 +49,7 @@ def xiaojiguanliyuan_login(request):
                 return JsonResponse(msg)
                 
         req_dict['id'] = datas[0].get('id')
+        req_dict['avatar'] = datas[0].get('zhaopian')
         return Auth.authenticate(Auth, xiaojiguanliyuan, req_dict)
 
 

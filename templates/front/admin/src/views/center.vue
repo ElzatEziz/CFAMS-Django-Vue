@@ -5,7 +5,7 @@
       ref="ruleForm"
       :model="ruleForm"
       label-width="80px"
-	  style="background: transparent;"
+	    style="background: transparent;"
     >  
      <el-row>
       <el-col :span="12">
@@ -44,17 +44,17 @@
       </el-col>
       <el-col :span="12">
         <el-form-item   v-if="flag=='caiwuyuan'"  label="职位" prop="zhiwei">
-          <el-input v-model="ruleForm.zhiwei" readonly              placeholder="职位" clearable></el-input>
+          <el-input v-model="ruleForm.zhiwei" readonly  placeholder="职位" clearable></el-input>
         </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item   v-if="flag=='caiwuyuan'"  label="手机" prop="shouji">
-          <el-input v-model="ruleForm.shouji"               placeholder="手机" clearable></el-input>
+          <el-input v-model="ruleForm.shouji"  placeholder="手机" clearable></el-input>
         </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item   v-if="flag=='xiaojiguanliyuan'"  label="账号" prop="zhanghao">
-          <el-input v-model="ruleForm.zhanghao" readonly              placeholder="账号" clearable></el-input>
+          <el-input v-model="ruleForm.zhanghao" readonly  placeholder="账号" clearable></el-input>
         </el-form-item>
       </el-col>
       <el-col :span="12">
@@ -272,6 +272,7 @@ export default {
         data: this.ruleForm
       }).then(({ data }) => {
         if (data && data.code === 0) {
+          console.log(data)
           this.$message({
             message: "修改信息成功",
             type: "success",

@@ -1,14 +1,9 @@
 <template>
-			<el-main style="padding: 10px 20px;
-				background: url(http://codegen.caihongy.cn/20211127/eab52ed12cc046f993b4948a1731044f.png);
-						boxShadow: 0 0 6px rgba(0,0,0,0);
-                height:calc(100% - ${template2.back.menulist.menulistHeight});
-        		">
-    		<bread-crumbs :title="title" class="bread-crumbs"></bread-crumbs>
-		<router-view class="router-view" style="height:auto;background: transparent;"></router-view>
+	<el-main>
+		<bread-crumbs :title="title" class="bread-crumbs"></bread-crumbs>
+		<router-view class="router-view"></router-view>
 	</el-main>
 </template>
-
 <script>
 	import menu from "@/utils/menu";
 	export default {
@@ -18,7 +13,7 @@
 				role: "",
 				currentIndex: -2,
 				itemMenu: [],
-				title: '',
+				title: ''
 			};
 		},
 		mounted() {
@@ -26,16 +21,7 @@
 			this.menuList = menus;
 			this.role = this.$storage.get("role");
 		},
-		created() {
-			this.init();
-		},
 		methods: {
-			init(){
-				this.$nextTick(()=>{
-					// let h = document.getElementsByClassName('el-aside')[0].clientHeight
-					// document.getElementsByClassName('el-main')[0].style.minHeight = "calc(100vh - 80px - " + h+'px)'
-				})
-			},
 			menuHandler(menu) {
 				this.$router.push({
 					name: menu.tableName
@@ -70,7 +56,6 @@
 				this.$router.push({
 					name: 'home'
 				});
-				
 			}
 		}
 	};
@@ -117,13 +102,13 @@
 	}
 
 	.el-main {
-		// background-color: #F6F8FA;
+		background-color: #F6F8FA;
 		padding: 0 24px;
-		min-height: 100vh;
 		// padding-top: 60px;
 	}
 
 	.router-view {
+		width: 100%;
 		padding: 10px;
 		margin-top: 10px;
 		background: #FFFFFF;
@@ -136,9 +121,5 @@
 		// border-top: 1px solid #e9eef3;
 		margin-top: 10px;
 		box-sizing: border-box;
-	}
-	
-	.detail-form-content {
-	    background: transparent;
 	}
 </style>

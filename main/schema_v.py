@@ -12,9 +12,7 @@ from django.shortcuts import redirect
 from .config_model import config
 from util.codes import *
 from util import message as mes
-from util.baidubce_api import BaiDuBce
-from util.locate import geocoding
-from dj2.settings import dbName as schemaName
+from CFAMSDB.settings import dbName as schemaName
 from django.db import connection
 
 def schemaName_cal(request, tableName, columnName):
@@ -186,31 +184,31 @@ def schemaName_location(request):
 
         return JsonResponse(msg)
 
-
-def schemaName_matchface(request):
-    '''
-    baidubce百度人脸识别
-    '''
-    if request.method in ["POST", "GET"]:
-        msg = {"code": normal_code}
-        req_dict = request.session.get("req_dict")
-
-        face1 = req_dict.get("face1")
-        file_path1 = os.path.join(os.getcwd(),"templates/front",face1)
-
-        face2 = req_dict.get("face2")
-        file_path2 = os.path.join(os.getcwd(), "templates/front", face2)
-
-        data = config.getbyparams(config, config, {"name": "APIKey"})
-        client_id = data[0].get("value")
-        data = config.getbyparams(config, config, {"name": "SecretKey"})
-        client_secret = data[0].get("value")
-
-        bdb = BaiDuBce()
-        score = bdb.bd_check2pic(client_id, client_secret, file_path1, file_path2)
-        msg['score'] = score
-
-        return JsonResponse(msg)
+#
+# def schemaName_matchface(request):
+#     '''
+#     baidubce百度人脸识别
+#     '''
+#     if request.method in ["POST", "GET"]:
+#         msg = {"code": normal_code}
+#         req_dict = request.session.get("req_dict")
+#
+#         face1 = req_dict.get("face1")
+#         file_path1 = os.path.join(os.getcwd(),"templates/front",face1)
+#
+#         face2 = req_dict.get("face2")
+#         file_path2 = os.path.join(os.getcwd(), "templates/front", face2)
+#
+#         data = config.getbyparams(config, config, {"name": "APIKey"})
+#         client_id = data[0].get("value")
+#         data = config.getbyparams(config, config, {"name": "SecretKey"})
+#         client_secret = data[0].get("value")
+#
+#         bdb = BaiDuBce()
+#         score = bdb.bd_check2pic(client_id, client_secret, file_path1, file_path2)
+#         msg['score'] = score
+#
+#         return JsonResponse(msg)
 
 
 def schemaName_option(request, tableName, columnName):

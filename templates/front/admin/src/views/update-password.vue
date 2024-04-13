@@ -8,13 +8,13 @@
       label-width="80px"
     >
       <el-form-item label="原密码" prop="password">
-        <el-input v-model="ruleForm.password" show-password></el-input>
+        <el-input v-model="ruleForm.password"></el-input>
       </el-form-item>
       <el-form-item label="新密码" prop="newpassword">
-        <el-input v-model="ruleForm.newpassword" show-password></el-input>
+        <el-input v-model="ruleForm.newpassword"></el-input>
       </el-form-item>
       <el-form-item label="确认密码" prop="repassword">
-        <el-input v-model="ruleForm.repassword" show-password></el-input>
+        <el-input v-model="ruleForm.repassword"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onUpdateHandler">确 定</el-button>

@@ -5,11 +5,11 @@ import os
 from django.urls import path
 from main import users_v, config_v, schema_v
 
-# from dj2.settings import dbName as schemaName
+# from CFAMSDB.settings import dbName as schemaName
 
 # url规则列表
 urlpatterns = [
-    path(r'users/register', users_v.users_register),
+    # path(r'users/register', users_v.users_register),
     path(r'users/login', users_v.users_login),
     path(r'users/logout', users_v.users_logout),
     path(r'users/session', users_v.users_session),
@@ -143,7 +143,7 @@ urlpatterns.extend(
         path(r'follow/<tableName>/<columnName>/<level>/<parent>', schema_v.schemaName_follow_level),
         path(r'follow/<tableName>/<columnName>', schema_v.schemaName_follow),
         path(r'location', schema_v.schemaName_location),
-        path(r'matchFace', schema_v.schemaName_matchface),
+        # path(r'matchFace', schema_v.schemaName_matchface),
         path(r'option/<tableName>/<columnName>', schema_v.schemaName_option),
         path(r'remind/<tableName>/<columnName>/<type>', schema_v.schemaName_remind_tablename_columnname_type),
         # 前台提醒接口（通用接口，不需要登陆）

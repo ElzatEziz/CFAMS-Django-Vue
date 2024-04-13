@@ -25,16 +25,16 @@ def users_login(request):
         return Auth.authenticate(Auth, users, req_dict)
 
 
-def users_register(request):
-    if request.method in ["POST", "GET"]:
-        msg = {'code': normal_code, "msg": mes.normal_code}
-        req_dict = request.session.get("req_dict")
-
-        error = users.createbyreq(users, users, req_dict)
-        if error != None:
-            msg['code'] = crud_error_code
-            msg['msg'] = error
-        return JsonResponse(msg)
+# def users_register(request):
+#     if request.method in ["POST", "GET"]:
+#         msg = {'code': normal_code, "msg": mes.normal_code}
+#         req_dict = request.session.get("req_dict")
+#
+#         error = users.createbyreq(users, users, req_dict)
+#         if error != None:
+#             msg['code'] = crud_error_code
+#             msg['msg'] = error
+#         return JsonResponse(msg)
 
 
 def users_session(request):
